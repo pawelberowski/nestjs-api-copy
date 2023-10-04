@@ -54,7 +54,7 @@ export class TasksService {
 
   async delete(id: number) {
     try {
-      return this.prismaService.task.delete({
+      return await this.prismaService.task.delete({
         where: {
           id,
         },

@@ -54,7 +54,7 @@ export class EmployeesService {
 
   async delete(id: number) {
     try {
-      return this.prismaService.employee.delete({
+      return await this.prismaService.employee.delete({
         where: {
           id,
         },

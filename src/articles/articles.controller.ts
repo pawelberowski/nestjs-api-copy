@@ -37,6 +37,6 @@ export class ArticlesController {
 
   @Delete(':id')
   delete(@Param('id', ParseIntPipe) id: number) {
-    this.articlesService.delete(id);
+    return this.articlesService.delete(id);
   }
 }

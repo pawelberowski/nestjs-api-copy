@@ -117,8 +117,9 @@ export class ProductsService {
     if (!productsToDelete[0]) {
       throw new ConflictException('No products with empty stock');
     }
-    productsToDelete.forEach((product) => {
-      this.delete(product.id);
-    });
+    const deletePromises = productsToDelete.map((product) =>
+      this.delete(product.id),
+    );
+    return Promise.all(deletePromises);
   }
 }

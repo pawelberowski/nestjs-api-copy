@@ -46,7 +46,7 @@ export class ProductsController {
 
   @Delete(':id')
   delete(@Param('id', ParseIntPipe) id: number) {
-    this.productsService.delete(id);
+    return this.productsService.delete(id);
   }
 
   @Patch(':id/increase-stock')
